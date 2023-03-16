@@ -3,7 +3,7 @@ import MoviePlaylist from "./components/MoviePlaylist";
 import SongPlaylist from "./components/SongPlaylist";
 
 import { useDispatch } from "react-redux";
-import {reset} from './store';
+import {reset} from "./store/actions";
 
 export default function App() {
     const dispatch = useDispatch();
