@@ -13,16 +13,17 @@ function CarForm() {
     const handleNameChange = (event) => {
         dispatch(changeName(event.target.value));
     };
+    
     const handleCostChange = (event) => {
         const carCost = parseInt(event.target.value) || 0;
         dispatch(changeCost(carCost));
     };
     
     const handleSubmit = (event) => {
-        event.defaultPrevented();
+        event.preventDefault();
         
-        dispatch(addCar({name, cost}));
-    }
+        dispatch(addCar({ name, cost }));
+    };
     
     return (
         <div className="car-form panel">
