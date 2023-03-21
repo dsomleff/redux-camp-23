@@ -1,5 +1,34 @@
 {
-  "users": [{ "id": 1, "name": "Myra" }],
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Noel Osinski",
+      "id": 2
+    },
+    {
+      "name": "Willie Franey",
+      "id": 3
+    },
+    {
+      "name": "Erik Murazik",
+      "id": 4
+    },
+    {
+      "name": "Brad Treutel",
+      "id": 5
+    },
+    {
+      "name": "Tanya Crona",
+      "id": 6
+    },
+    {
+      "name": "Ella Hauck III",
+      "id": 7
+    }
+  ],
   "albums": [],
   "photos": []
 }
