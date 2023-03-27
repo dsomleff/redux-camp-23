@@ -1,18 +1,24 @@
 {
   "users": [
     {
-      "name": "Carroll Bechtelar",
-      "id": 12
+      "id": 1,
+      "name": "Myra"
     },
     {
-      "name": "Ricardo Balistreri",
-      "id": 13
+      "name": "Elsie Price",
+      "id": 3
     },
     {
-      "name": "Sean Bahringer",
-      "id": 14
+      "name": "Harold Strosin",
+      "id": 4
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": 10,
+      "title": "Hiking Trip",
+      "userId": 1
+    }
+  ],
   "photos": []
 }
