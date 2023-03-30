@@ -12,7 +12,8 @@ const albumsApi = createApi({
         return {
             //fetchAlbums will be the name of generated hook
             fetchAlbums: builder.query({
-                // useFetchAlbumsQuery(user) <=> query: (user) 
+                providesTags: ['Album'],
+                // useFetchAlbumsQuery(user) <=> query: (user)
                 query: (user) => {
                     return {
                         url: '/albums',
@@ -24,6 +25,7 @@ const albumsApi = createApi({
                 },
             }),
             addAlbum: builder.mutation({
+                invalidatesTags: ['Album'],
                 query: (user) => {
                     return {
                         url: '/albums',
