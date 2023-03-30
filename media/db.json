@@ -18,6 +18,16 @@
       "id": 10,
       "title": "Hiking Trip",
       "userId": 1
+    },
+    {
+      "userId": 1,
+      "title": "Sleek Cotton Towels",
+      "id": 11
+    },
+    {
+      "userId": 1,
+      "title": "Rustic Concrete Ball",
+      "id": 12
     }
   ],
   "photos": []
