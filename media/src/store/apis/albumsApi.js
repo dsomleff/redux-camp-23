@@ -24,8 +24,17 @@ const albumsApi = createApi({
         return {
             //fetchAlbums will be the name of generated hook
             fetchAlbums: builder.query({
+                // One way to define the tags
+                // providesTags: (result, error, user) => {
+                //     return [{ type: 'Album', id: user.id }];
+                // },
+                // Another way to define the tags
                 providesTags: (result, error, user) => {
-                    return [{ type: 'Album', id: user.id }];
+                    const tags = result.map((album) => {
+                        return { type: 'Album', id: album.id };
+                    });
+                    tags.push({ type: 'UsersAlbums', id: user.id });
+                    return tags;
                 },
                 // useFetchAlbumsQuery(user) <=> query: (user)
                 query: (user) => {
@@ -39,8 +48,13 @@ const albumsApi = createApi({
                 },
             }),
             addAlbum: builder.mutation({
+                // First tag variation
+                // invalidatesTags: (result, error, user) => {
+                //     return [{ type: 'Album', id: user.id }];
+                // },
+                // Second tag variation
                 invalidatesTags: (result, error, user) => {
-                    return [{ type: 'Album', id: user.id }];
+                    return [{ type: 'UsersAlbums', id: user.id }];
                 },
                 query: (user) => {
                     return {
@@ -54,8 +68,13 @@ const albumsApi = createApi({
                 },
             }),
             removeAlbum: builder.mutation({
+                // First tag variation
+                // invalidatesTags: (result, error, album) => {
+                //     return [{ type: 'Album', id: album.userId }];
+                // },
+                // Second tag variation
                 invalidatesTags: (result, error, album) => {
-                    return [{ type: 'Album', id: album.userId }];
+                    return [{ type: 'Album', id: album.id }];
                 },
                 query: (album) => {
                     return {
